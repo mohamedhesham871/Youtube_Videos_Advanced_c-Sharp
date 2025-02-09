@@ -22,6 +22,7 @@ namespace Youtube_Videos_Advanced_c_.Examples_Classes
             Contract = _contract;
             StartingSalary = Salary;
             DescriptionJob = desc;
+            //take data
         }
 
         public override string ToString()
