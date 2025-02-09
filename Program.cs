@@ -10,6 +10,7 @@ namespace Youtube_Videos_Advanced_c_
         //2 List Of Objects
         //3 Sort List OF Objects
         //4 Convert Enum to List
+        //5 Dictionary
         #endregion
         static void Main(string[] args)
         {
@@ -35,24 +36,45 @@ namespace Youtube_Videos_Advanced_c_
             #endregion
 
             #region Convert Enum to List
+            /*
             var ListOfCountries =Enum.GetValues(typeof (country)).Cast<country>().ToList();
 
             foreach(var countries in ListOfCountries)
             { 
                 Console.WriteLine(countries);
             }
-            
+            */
+            #endregion
+
+            #region Dictionary
+            //Key can't Be  NULL
+            Dictionary<string,int>Fruits=new Dictionary<string,int>();
+
+            Fruits.Add("Apple", 10);
+            Fruits.Add("Banana", 8);
+            Fruits.Add("Watermelon", 2);
+            Fruits.Add("Orange", 15);
+            Fruits.Add("Graps", 90);
+
+            //Make it Ordered BY Key
+            var OrderFruits = Fruits.OrderBy(Fruits =>Fruits.Key);
+            foreach(var Fruit in OrderFruits)
+                Console.WriteLine(Fruit);
+
             #endregion
         }
+        #region Enum OF countries
         enum country
         {
             Egypt,
-            France, 
+            France,
             Germany,
-            Belgium, 
+            Belgium,
             Netherlands,
             Switzerland
 
         }
+        #endregion
+
     }
 }
