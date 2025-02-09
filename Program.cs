@@ -9,10 +9,12 @@ namespace Youtube_Videos_Advanced_c_
         //1 List
         //2 List Of Objects
         //3 Sort List OF Objects
+        //4 Convert Enum to List
         #endregion
         static void Main(string[] args)
         {
             #region Make List Of Employee
+            /*
             List<Employee> employees = new List<Employee>();
             //Add Emplyee
              employees.Add(new Employee(1, "mohamed Hesham", Contract.FullTime, 10000, "Developer"));
@@ -29,7 +31,28 @@ namespace Youtube_Videos_Advanced_c_
             Console.WriteLine("----------After Sorting List----------");
             foreach (Employee employee in employees)
                 Console.WriteLine(employee);
+            */
             #endregion
+
+            #region Convert Enum to List
+            var ListOfCountries =Enum.GetValues(typeof (country)).Cast<country>().ToList();
+
+            foreach(var countries in ListOfCountries)
+            { 
+                Console.WriteLine(countries);
+            }
+            
+            #endregion
+        }
+        enum country
+        {
+            Egypt,
+            France, 
+            Germany,
+            Belgium, 
+            Netherlands,
+            Switzerland
+
         }
     }
 }
